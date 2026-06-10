@@ -1,0 +1,14 @@
+Primary goal: Create an interface that rolls three dice and returns the daily
+  Suibian Temple fortune + what daily health goal that fortune connects to.
+
+main body:
+- "roll" button
+- three side-to-side images of dice faces
+- text body for the "fortune"
+- text body for the health interpretation
+
+backend:
+- code needed to:
+  - roll three random numbers 1-6
+  - assign various combinations of the three rolls to daily fortunes
+  - return daily fortune + health goal based on the result.
