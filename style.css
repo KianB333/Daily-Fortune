@@ -1,0 +1,50 @@
+html {
+    display: flex;
+    box-sizing: border-box;
+    height: 100%;
+    background-color: black;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex: 1;
+    border: 1px solid white;
+    flex-direction: column;
+}
+
+.controls {
+    display: flex;
+    flex: 1;
+    border: 5px solid red;
+    justify-content: space-between;
+}
+
+.roll, .reroll {
+    display: flex;
+    flex: 1;
+    min-height: 50px;
+    min-width: 50px;
+    border: 1px solid blue;
+}
+
+.dice {
+    display: flex;
+    flex: 3;
+    border: 1px solid yellow;
+}
+
+.die1, .die2, .die3 {
+    display: flex;
+    flex: 1;
+    border: 1px solid white;
+}
+
+.output {
+    display: flex;
+    flex: 3;
+    border: 5px solid green;
+}
+
