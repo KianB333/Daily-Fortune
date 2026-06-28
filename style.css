@@ -1,17 +1,16 @@
 html {
-    display: flex;
     box-sizing: border-box;
+    /*background-color: black;*/
+    border: blue solid 1px;
     height: 100%;
-    background-color: black;
 }
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
 body {
+    border: 1px solid black;
     display: flex;
-    flex: 1;
-    border: 1px solid white;
     flex-direction: column;
 }
 
@@ -20,14 +19,17 @@ body {
     flex: 1;
     border: 5px solid red;
     justify-content: space-between;
+    min-width: fit-content;
 }
 
 .roll, .reroll {
     display: flex;
     flex: 1;
-    min-height: 50px;
-    min-width: 50px;
-    border: 1px solid blue;
+    min-height: min-content;
+    min-width: min-content;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
 }
 
 .dice {
@@ -36,15 +38,32 @@ body {
     border: 1px solid yellow;
 }
 
-.die1, .die2, .die3 {
+.die{ 
     display: flex;
-    flex: 1;
     border: 1px solid white;
+}
+
+.die img {
+    max-width: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
 }
 
 .output {
     display: flex;
-    flex: 3;
+    flex: 4;
+    flex-direction: column;
     border: 5px solid green;
 }
 
+.fortune {
+    display: flex;
+    flex: 1;
+    border: 1px solid pink;
+}
+
+.health {
+    display: flex;
+    flex: 2;
+    border: 1px solid orange;
+}
