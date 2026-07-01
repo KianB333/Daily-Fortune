@@ -1,5 +1,6 @@
-Primary goal: Create an interface that rolls three dice and returns the daily
-  Suibian Temple fortune + what daily health goal that fortune connects to.
+Primary goal: Create an interface that rolls three dice and returns 
+the daily Suibian Temple fortune + what daily health goal that fortune 
+connects to.
 
 top section:
 - "roll" button
@@ -8,20 +9,45 @@ top section:
 
 bottom section:
 - text body for the "fortune"
-- text body for the health interpretation
+- text body for the health result
 
 backend:
-  - roll button generates 3 random numbers 1-6, stores rolls as variable
+  - roll button generates 3 random numbers 1-6, stores rolls 
+  as variables.
     - assign 6 variables to each dice name (for clarity later)
   
-  - set variables for each possible combination of dice (going to use a lot of "or" statements for "any red", "any blue", "two lightning", etc.)
+  - set variables for each possible combination of dice 
+  (going to use a lot of "or" statements for "any red", "any blue", 
+  "two lightning", etc.)
   
-  - Make roll button remove its own event listener and transfer it to reroll
+  - Make roll button remove its own event listener and transfer it 
+  to reroll
   
-  - return combination generated from the 3 numbers when roll is pressed
-    - How to check for any of the three? Can't check against each roll. If I want to check for lightning and two reds, for example, it'll be looking for only roll1 as "lightning". But any of the rolls can be lightning if the other two are red. 
-      - Just make a really long list of "or" statements and "and" statements? 
-        - If ((roll1 || roll2 || roll3 == "lightning") && (roll1 || roll2 || roll3 == "sun" || "star" || "fire") && (roll1 || roll2 || roll3 == "sun" || "star" || "fire"))?? No way. (It's also crazy long for each outcome, but) it'll still read duplicates from the same die.
-      - Maybe I need to use a "for" loop and tally how many rolls each dice type got, then make the outcomes check for dice tallies, which would mean that no dice roll would get duplicated.
-        - diceTally function: for every roll, add +1 to the roll's tally, stored in an object to retain the dice name.
-        - call diceTally when checking for health results and compare (i.e., if ("lightning" || "ice" || "moon" == 2), there are two blues.) 
+  - return combination generated from the 3 numbers when roll 
+  is pressed
+    - How to check for any of the three? Can't check against each roll.
+    If I want to check for lightning and two reds, for example, it'll 
+    be looking for only roll1 as "lightning". But any of the rolls can 
+    be lightning if the other two are red. 
+      - Just make a really long list of "or" statements and "and" 
+      statements? 
+        - If ((roll1 || roll2 || roll3 == "lightning") && 
+        (roll1 || roll2 || roll3 == "sun" || "star" || "fire") && 
+        (roll1 || roll2 || roll3 == "sun" || "star" || "fire"))?? 
+        No way. (It's also crazy long for each outcome, but) it'll 
+        still read duplicates from the same die.
+      - Maybe I need to use a "for" loop and tally how many rolls each 
+      dice type got, then make the outcomes check for dice tallies, 
+      which would mean that no dice roll would get duplicated.
+        - diceTally function: for every roll, add +1 to the roll's 
+        tally, stored in an object to retain the dice name.
+        - call diceTally when checking for health results and compare 
+        (i.e., if ("lightning" || "ice" || "moon" == 2), there are 
+        two blues.) 
+        - comparing an object via a switch statement is incredibly 
+        tedious and inefficient. You have to convert the object to a 
+        JSON string. Will be trying to convert diceTally into an array 
+        for comparison.
+        - I wonder if it'd just be easier to do a chain of if/else 
+        statements and keep diceTally an object. I'll keep that in my 
+        back pocket.

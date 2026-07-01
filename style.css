@@ -12,6 +12,8 @@ body {
     border: 1px solid black;
     display: flex;
     flex-direction: column;
+    margin: 0;
+    height: 100%;
 }
 
 .controls {
@@ -47,23 +49,29 @@ body {
     max-width: 100%;
     aspect-ratio: 1;
     object-fit: contain;
+    min-width: 5px;
 }
 
 .output {
     display: flex;
     flex: 4;
     flex-direction: column;
-    border: 5px solid green;
+    border: 5px solid orange;
+
 }
 
 .fortune {
     display: flex;
     flex: 1;
-    border: 1px solid pink;
+    border: 1px solid purple;
+    align-items: center;
+    justify-content: center;
 }
 
 .health {
     display: flex;
     flex: 2;
-    border: 1px solid orange;
+    border: 1px solid lime;
+    padding: 10px;
+    justify-content: center;
 }
